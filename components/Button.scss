@@ -1,0 +1,80 @@
+@import './sijlVars';
+
+.btn {
+    background-color: $light;
+    color: $dark;
+    padding: 0.6rem 1.3rem;
+    border: 0;
+    box-shadow: $shadow;
+    margin: 0.75rem;
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.outline {
+    border: 1px solid $dark;
+    color: $dark;
+    background-color: transparent;
+    &:hover {
+        background-color: $dark;
+        color: $light;
+    }
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.success {
+    background-color: $success;
+    color: $light;
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.success.outline {
+    border: 1px solid $success;
+    color: $success;
+    background-color: transparent;
+    &:hover {
+        background-color: $success;
+        color: $light;
+    }
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.danger {
+    background-color: $danger;
+    color: $light;
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.danger.outline {
+    border: 1px solid $danger;
+    color: $danger;
+    background-color: transparent;
+    &:hover {
+        background-color: $danger;
+        color: $light;
+    }
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.warning {
+    background-color: $warning;
+    color: $dark;
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.primary {
+    background-color: $primary;
+    color: $light;
+    &:active {
+        background-color: $background;
+    }
+}
+.btn.round {
+    border-radius: 25px;
+}
