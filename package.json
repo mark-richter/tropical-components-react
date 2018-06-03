@@ -1,26 +1,28 @@
 {
-  "name": "ssb-storybook",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 9001 -c .storybook"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@storybook/react": "^3.3.13",
-    "babel-core": "^6.26.0",
-    "css-loader": "^0.28.9",
-    "datatables.net": "^1.10.16",
-    "jquery": "^3.3.1",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.20.2"
-  },
-  "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  }
+    "name": "ssb-storybook",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "storybook": "start-storybook -p 9001 -c .storybook"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@storybook/addon-knobs": "^3.4.6",
+        "@storybook/addon-options": "^3.4.6",
+        "@storybook/react": "^3.4.6",
+        "babel-core": "^6.26.3",
+        "css-loader": "^0.28.11",
+        "node-sass": "^4.9.0",
+        "prop-types": "^15.6.1",
+        "sass-loader": "^7.0.1",
+        "storybook-readme": "^3.3.0",
+        "style-loader": "^0.21.0"
+    },
+    "dependencies": {
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0"
+    }
 }
