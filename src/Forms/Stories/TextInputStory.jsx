@@ -20,6 +20,7 @@ storiesOf("Forms", module)
             <TextInput
                 label={text("label", "Name")}
                 placeholder={text("placeholder", "Please Enter Your Name")}
+                type={text("type", "text")}
                 onChange={action("onChange")}
             />
         </div>

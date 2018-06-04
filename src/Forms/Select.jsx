@@ -12,6 +12,7 @@ class Select extends Component {
     static propTypes = {
         label: PropTypes.string.isRequired,
         children: PropTypes.node,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         onChange: PropTypes.func
     };
 
@@ -32,7 +33,7 @@ class Select extends Component {
     }
 
     render() {
-        const { label, children, onChange } = this.props;
+        const { label, value, children, onChange } = this.props;
         return (
             <div className={"form-group label-floating " + this.state.focus}>
                 <label className="control-label">{label}</label>
@@ -41,6 +42,7 @@ class Select extends Component {
                     onFocus={() => this.onFocus()}
                     onBlur={() => this.onBlur()}
                     onChange={this.handleChange}
+                    value={value}
                 >
                     {children}
                 </select>
