@@ -1,88 +1,224 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import Button from '../components/Button';
-import Table from '../components/DataTable';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
+import { withReadme, withDocs } from "storybook-readme";
+import {
+    withKnobs,
+    text,
+    boolean,
+    number,
+    object
+} from "@storybook/addon-knobs";
 
-import '../components/sijl.scss';
+import Card from "../src/Card/Card.jsx";
+import CardReadme from "../src/Card/Docs/Card.md";
+import CardImage from "../src/Card/CardImage.jsx";
+import CardImageReadme from "../src/Card/Docs/CardImage.md";
+import CardImageAndBadgeReadme from "../src/Card/Docs/CardImageAndBadge.md";
 
-const dataTablesData = [
-    {
-        name: "Dave Boucher",
-        nickname: "DB"
-    }, 
-    {
-        name: "Ian Kramer", 
-        nickname: "IK"
-    },
-    {
-        name: "Caglar Cozer", 
-        nickname: "CC"
-    },
-    {
-        name: "Chris Fetters", 
-        nickname: "CF"
-    }
-]
+import NavBar from "../src/Navigation/NavBar.jsx";
 
-const dataTablesColumns = [
-    {
-        title: 'Name',
-        width: 120,
-        data: 'name'
-    },
-    {
-        title: 'Nickname',
-        width: 180,
-        data: 'nickname'
-    },
-];
+import Headers from "../src/Typography/Headers.jsx";
+import Titles from "../src/Typography/Titles.jsx";
+import Paragraph from "../src/Typography/Paragraph.jsx";
+import Colors from "../src/Typography/Colors.jsx";
 
-storiesOf('Buttons', module)
-  .add('default', () => (
-    <div class="sijl">
-        <Button onClick={action('clicked')}>Hello Button</Button>
-    </div>
-  ))
-  .add('colors', () => (
-    <div class="sijl">
-        <div className="container">
-            <div className="row">
-                <Button onClick={action('clicked')}>default</Button>
-                <Button color='success' onClick={action('clicked')}>success</Button>
-                <Button color='danger' onClick={action('clicked')}>danger</Button>
-                <Button color='warning' onClick={action('clicked')}>warning</Button>
-                <Button color='primary' onClick={action('clicked')}>primary</Button>
-            </div>
+// Home
+import WelcomeStory from "../src/Home/Stories/WelcomeStory.jsx";
+
+// Typography
+import InfoStory from "../src/Typography/Stories/InfoStory.jsx";
+import StylesStory from "../src/Typography/Stories/StylesStory.jsx";
+
+// Navigation
+
+// Forms
+import TextInputStory from "../src/Forms/Stories/TextInputStory.jsx";
+import TextAreaStory from "../src/Forms/Stories/TextAreaStory.jsx";
+import SelectStory from "../src/Forms/Stories/SelectStory.jsx";
+import RadioStory from "../src/Forms/Stories/RadioStory.jsx";
+import DynamicFormStory from "../src/Forms/Stories/DynamicFormStory.jsx";
+
+// Cards
+
+storiesOf("Card", module)
+    .addDecorator(withKnobs)
+    .addDecorator(withReadme(CardReadme))
+    .add("basic", () => (
+        <Card>
+            <h4>Hello, World!</h4>
+        </Card>
+    ))
+    .addDecorator(withReadme(CardImageReadme))
+    .add("image", () => (
+        <div className="col-md-6">
+            <Card
+                image={
+                    <CardImage
+                        posterImage={text(
+                            "posterImage",
+                            "https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                        )}
+                        title={text("title", "Hello, World!")}
+                        size={text("size", "medium")}
+                    />
+                }
+            >
+                <div>
+                    <p>This is a card with an image</p>
+                </div>
+            </Card>
         </div>
-    </div>
-  ))
-  .add('shapes', () => (
-    <div class="sijl">
-        <div className="container">
-            <div className="row">
-                <Button onClick={action('clicked')}>default</Button>
-                <Button shape='round' onClick={action('clicked')}>round</Button>
-            </div>
+    ))
+    .addDecorator(withReadme(CardImageAndBadgeReadme))
+    .add("image & badge", () => (
+        <div className="col-md-6">
+            <Card
+                image={
+                    <CardImage
+                        posterImage={text(
+                            "posterImage",
+                            "https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                        )}
+                        image={text(
+                            "image",
+                            "https://static.ssbintel.com/assets/portals/ssb/logo/ssb-logo.png"
+                        )}
+                        title={text("title", "Hello, World!")}
+                        size={text("size", "medium")}
+                    />
+                }
+            >
+                <div>
+                    <p>This is a card with an image &amp; badge</p>
+                </div>
+            </Card>
         </div>
-    </div>
-  ))
-  .add('styles', () => (
-    <div class="sijl">
-        <div className="container">
-            <div className="row">
-                <Button onClick={action('clicked')}>default</Button>
-                <Button style='outline' onClick={action('clicked')}>outline default</Button>
-                <Button color="success" style='outline' onClick={action('clicked')}>outline success</Button>
-                <Button color="danger" shape="round" style='outline' onClick={action('clicked')}>outline success round</Button>
-            </div>
+    ))
+    .add("badge only", () => (
+        <div className="col-md-6">
+            <Card
+                image={
+                    <CardImage
+                        image="https://static.ssbintel.com/assets/portals/ssb/logo/ssb-logo.png"
+                        size="small"
+                    />
+                }
+            >
+                <div>
+                    <p>This is a card with a badge image only</p>
+                </div>
+            </Card>
         </div>
-    </div>
-  ));
-
-  storiesOf('DataTable', module)
-    .add('default', () => (
-        <div class="sijl">
-            <Table data={dataTablesData} columns={dataTablesColumns} />
+    ))
+    .add("image sizes", () => (
+        <div>
+            <div className="row">
+                <div className="col-md-4">
+                    <p>Small</p>
+                    <Card
+                        image={
+                            <CardImage
+                                posterImage="https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                                title="Hello, World!"
+                                size="small"
+                            />
+                        }
+                    >
+                        <div>
+                            <p>This is a card with an image</p>
+                        </div>
+                    </Card>
+                </div>
+                <div className="col-md-4">
+                    <p>Medium</p>
+                    <Card
+                        image={
+                            <CardImage
+                                posterImage="https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                                title="Hello, World!"
+                                size="medium"
+                            />
+                        }
+                    >
+                        <div>
+                            <p>This is a card with an image</p>
+                        </div>
+                    </Card>
+                </div>
+                <div className="col-md-4">
+                    <p>Large</p>
+                    <Card
+                        image={
+                            <CardImage
+                                posterImage="https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                                title="Hello, World!"
+                                size="large"
+                            />
+                        }
+                    >
+                        <div>
+                            <p>This is a card with an image</p>
+                        </div>
+                    </Card>
+                </div>
+            </div>
+            <h2>With Badges</h2>
+            <hr />
+            <div className="row">
+                <div className="col-md-4">
+                    <p>Small</p>
+                    <Card
+                        image={
+                            <CardImage
+                                posterImage="https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                                image="https://static.ssbintel.com/assets/portals/ssb/logo/ssb-logo.png"
+                                title="Hello, World!"
+                                size="small"
+                            />
+                        }
+                    >
+                        <div>
+                            <p>This is a card with an image</p>
+                        </div>
+                    </Card>
+                </div>
+                <div className="col-md-4">
+                    <p>Medium</p>
+                    <Card
+                        image={
+                            <CardImage
+                                posterImage="https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                                image="https://static.ssbintel.com/assets/portals/ssb/logo/ssb-logo.png"
+                                title="Hello, World!"
+                                size="medium"
+                            />
+                        }
+                    >
+                        <div>
+                            <p>This is a card with an image</p>
+                        </div>
+                    </Card>
+                </div>
+                <div className="col-md-4">
+                    <p>Large</p>
+                    <Card
+                        image={
+                            <CardImage
+                                posterImage="https://static.ssbintel.com/assets/portals/ssb/background/football_background.jpg"
+                                image="https://static.ssbintel.com/assets/portals/ssb/logo/ssb-logo.png"
+                                title="Hello, World!"
+                                size="large"
+                            />
+                        }
+                    >
+                        <div>
+                            <p>This is a card with an image</p>
+                        </div>
+                    </Card>
+                </div>
+            </div>
         </div>
     ));
+
+storiesOf("Navigation", module).add("navbar", () => <NavBar />);
