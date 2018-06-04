@@ -37,6 +37,7 @@ import TextInputStory from "../src/Forms/Stories/TextInputStory.jsx";
 import TextAreaStory from "../src/Forms/Stories/TextAreaStory.jsx";
 import SelectStory from "../src/Forms/Stories/SelectStory.jsx";
 import RadioStory from "../src/Forms/Stories/RadioStory.jsx";
+import DynamicFormStory from "../src/Forms/Stories/DynamicFormStory.jsx";
 
 // Cards
 

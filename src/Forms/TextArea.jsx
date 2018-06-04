@@ -13,6 +13,7 @@ class TextArea extends Component {
         label: PropTypes.string.isRequired,
         placeholder: PropTypes.string,
         rows: PropTypes.string,
+        value: PropTypes.string,
         onChange: PropTypes.func
     };
 

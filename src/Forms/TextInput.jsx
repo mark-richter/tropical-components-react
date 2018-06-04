@@ -12,11 +12,14 @@ class TextInput extends Component {
     static propTypes = {
         label: PropTypes.string.isRequired,
         placeholder: PropTypes.string,
+        value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        type: PropTypes.string,
         onChange: PropTypes.func
     };
 
     static defaultProps = {
-        onChange: () => {}
+        onChange: () => {},
+        type: "text"
     };
 
     handleChange = evt => {
@@ -38,7 +41,6 @@ class TextInput extends Component {
                 <label class="control-label">{label}</label>
                 <input
                     class="form-control"
-                    type="text"
                     onFocus={() => this.onFocus()}
                     onBlur={() => this.onBlur()}
                     {...other}
