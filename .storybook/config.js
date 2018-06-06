@@ -4,24 +4,23 @@ import Container from "./Container";
 
 import { setOptions } from "@storybook/addon-options";
 
-import "../libs/jquery/jquery.min.js";
-import "../libs/materialkit/material-kit.js";
+//import "../libs/materialkit/material-kit.js";
 
 setOptions({
-    name: "Tropical Components",
-    url: "localhost:9001",
-    goFullScreen: false,
-    showLeftPanel: true,
-    showDownPanel: true,
-    showSearchBox: false,
-    downPanelInRight: false
+  name: "Tropical Components",
+  url: "localhost:9001",
+  goFullScreen: false,
+  showStoriesPanel: true,
+  showAddonPanel: true,
+  showSearchBox: false,
+  addonPanelInRight: false
 });
 
 addDecorator(story => <Container story={story} />);
 
 function loadStories() {
-    require("../stories/index.js");
-    // You can require as many stories as you need.
+  require("../stories/index.js");
+  // You can require as many stories as you need.
 }
 
 configure(loadStories, module);
