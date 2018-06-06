@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+before_deploy:
+  - yarn prepublish
+
+deploy:
+  provider: npm
+  email: "services@ssbinfo.com"
+  api_key: "856af819-1334-4c1b-a217-7f371adf8d2f"
+  on:
+    branch: master
