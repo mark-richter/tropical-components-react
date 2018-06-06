@@ -8,6 +8,7 @@ cache:
     - node_modules
 
 deploy:
+  skip_cleanup: true
   provider: npm
   email: "services@ssbinfo.com"
   api_key: "856af819-1334-4c1b-a217-7f371adf8d2f"
