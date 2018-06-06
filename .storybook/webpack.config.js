@@ -1,13 +1,24 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   module: {
     rules: [
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: path.resolve(__dirname, '../')
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader",
+            options: { importLoaders: 2 }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              includePaths: [path.resolve(__dirname, "..", "node_modules")]
+            }
+          }
+        ]
       }
     ]
   }
-}
+};
