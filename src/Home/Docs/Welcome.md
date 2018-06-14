@@ -1,18 +1,8 @@
-# Tropical Components React
-
-### Lets get tropical!
-
-This repository provides a collection of SSB Components implemented using React.
-
-#### Demos & Live Docs
-
-<a href="https://tropical-components.netlify.com/" rel="some text">![Foo](https://raw.githubusercontent.com/github/explore/b828e2f992ba7aaeee664136cf4afd002112d79a/topics/storybook/storybook.png)</a>
-
-** Components are subject to change so please consult the storybook documentation for usage **
+# How To Use
 
 ## Installation
 
-#### Tropical Components (Required)
+#### Tropical Components
 
 We include all the library files you will need for styling inside one package called `tropical-components`. We do this so that you can still get consistent styled components whether you are using react or not. Included for right now are `bootstrap 3` and `tropical (ssb styles for bs3)`.
 
@@ -62,15 +52,3 @@ After successfully installing the `tropical-components-react` npm package, in on
 ```js
 import { ComponentName } from "tropical-components-react/dist/tropical-components-react";
 ```
-
-## Live Components
-
--   Forms
-    -   DynamicForm
-    -   Radio
-    -   Select
-    -   TextInput
-    -   TextArea
--   Cards
-    -   Card
-    -   CardImage

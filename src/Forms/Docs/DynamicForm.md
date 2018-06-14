@@ -1,25 +1,10 @@
-import React, { Component } from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { withReadme, withDocs } from "storybook-readme";
-import {
-    withKnobs,
-    text,
-    boolean,
-    number,
-    object
-} from "@storybook/addon-knobs";
+# Usage
 
-import DynamicFormReadme from "../Docs/DynamicForm.md";
+```js
+import { DynamicForm } from "tropical-components-react/dist/tropical-components-react";
+```
 
-import DynamicForm from "../DynamicForm.jsx";
-
-const data = {
-    email: "test@gmail.com",
-    password: "1234",
-    existingUser: "yes"
-};
-
+```js
 const schema = {
     classes: {
         form: "tenant-properties-form",
@@ -142,24 +127,26 @@ const schema = {
             ]
         }
     ]
-};
-
-function onSubmit(data) {
-    console.log("Form submitted!", data);
-    console.log("-----");
-    console.log(
-        "For this example, we disabled normal form submission functionality. "
-    );
-    console.log("-----");
-    alert("Submitted. Check the console to see the answers!");
 }
 
-storiesOf("Forms", module)
-    .addDecorator(withReadme(DynamicFormReadme))
-    .addDecorator(withKnobs)
-    .add("dynamic form", () => (
-        <div className="col-md-6">
-            <h2>Dynamic Form - Winterfell</h2>
-            <DynamicForm schema={schema} onSubmit={onSubmit} />
-        </div>
-    ));
+// You can see that the data nodes match the schema.questionSets.questions[x].questionId. This is required for data mapping
+var data = {
+    email: "test@gmail.com",
+    password: "12345"
+}
+
+function submit(data) {
+    // Log the data submitted from the form
+    console.log(data);
+}
+
+<DynamicForm schema={schema} data={data} onSubmit={submit}>
+```
+
+### Props
+
+| Prop     | Type   | Required |
+| -------- | ------ | -------- |
+| schema   | object | true     |
+| data     | object | false    |
+| onSubmit | method | true     |

@@ -1,100 +1,63 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
-import TextInput from "./TextInput.jsx";
-import TextArea from "./TextArea.jsx";
-import Select from "./Select.jsx";
-import Radio from "./Radio.jsx";
+var Winterfell = require("winterfell");
 
 class DynamicForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = this.props.data;
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: this.props.data
+        };
+        this.onRender = this.onRender.bind(this);
+        this.onUpdate = this.onUpdate.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
 
-    this.handleSelectChange = this.handleSelectChange.bind(this);
-  }
+    static propTypes = {
+        schema: PropTypes.object.isRequired,
+        data: PropTypes.object,
+        onSubmit: PropTypes.func.isRequired
+    };
 
-  static propTypes = {
-    fields: PropTypes.arrayOf(PropTypes.object),
-    data: PropTypes.object,
-    onChange: PropTypes.func
-  };
+    static defaultProps = {
+        data: {}
+    };
 
-  handleChange(e, field) {
-    this.setState({ [field]: e.target.value });
-    console.log(this.state);
-  }
+    componentWillReceiveProps(nextProps) {
+        this.setState({ questionAnswers: nextProps });
+    }
 
-  handleSelectChange(value, name, event) {
-    this.setState({ [name]: event.target.value });
-    console.log(this.state);
-  }
+    onRender() {
+        //console.log("Great news! Winterfell rendered successfully");
+        //this.setState({ "[questionAnswers]": this.props.data });
+    }
 
-  render() {
-    return (
-      <div className="row">
-        {this.props.fields.map((field, index) => {
-          if (field.component == "TextInput") {
-            return (
-              <div key={index} className={field.props.gridSize}>
-                <TextInput
-                  label={field.props.label}
-                  placeholder={field.props.placeholder}
-                  value={this.state[field.field]}
-                  type={field.props.type}
-                  onChange={e => this.handleChange(e, field.field)}
+    onUpdate(questionAnswers) {
+        // console.log(
+        //     "Question Updated! The current set of answers is: ",
+        //     this.state.data
+        // );
+        this.setState({ data: questionAnswers });
+    }
+
+    onSubmit(questionAnswers, target) {
+        this.props.onSubmit(questionAnswers);
+    }
+
+    render() {
+        return (
+            <div className="row">
+                <Winterfell
+                    schema={this.props.schema}
+                    disableSubmit={true}
+                    onRender={this.onRender}
+                    onUpdate={this.onUpdate}
+                    onSubmit={this.onSubmit}
+                    questionAnswers={this.state.data}
                 />
-              </div>
-            );
-          }
-          if (field.component == "TextArea") {
-            return (
-              <div key={index} className={field.props.gridSize}>
-                <TextArea
-                  label={field.props.label}
-                  placeholder={field.props.placeholder}
-                  rows={field.props.rows}
-                  value={this.state[field.field]}
-                  onChange={e => this.handleChange(e, field.field)}
-                />
-              </div>
-            );
-          }
-          if (field.component == "Select") {
-            return (
-              <div key={index} className={field.gridSize}>
-                <Select
-                  label={field.label}
-                  value={this.state[field.field]}
-                  onChange={this.handleSelectChange}
-                  name={field.field}
-                >
-                  {field.props.map(prop => {
-                    return (
-                      <option key={prop.value} value={prop.value}>
-                        {prop.label}
-                      </option>
-                    );
-                  })}
-                </Select>
-              </div>
-            );
-          }
-          if (field.component == "Radio") {
-            return (
-              <div key={index} className={field.props.gridSize}>
-                <Radio
-                  name={field.props.name}
-                  label={field.props.label}
-                  value={field.props.value}
-                />
-              </div>
-            );
-          }
-        })}
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 }
 
 export default DynamicForm;
