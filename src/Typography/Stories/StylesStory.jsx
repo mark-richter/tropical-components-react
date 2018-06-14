@@ -10,8 +10,11 @@ import {
     object
 } from "@storybook/addon-knobs";
 
+import TypographyReadme from "../Docs/Typography.md";
+
 storiesOf("Typography", module)
     .addDecorator(withKnobs)
+    .addDecorator(withReadme(TypographyReadme))
     .add("styles", () => (
         <div>
             <div className="col-md-8">
@@ -127,6 +130,107 @@ storiesOf("Typography", module)
                         <h6 className="title">
                             {text("title", "Hello, World!")}
                         </h6>
+                    </div>
+                </div>
+            </div>
+            <div className="col-md-8">
+                <h1>Paragraph &amp; Quote</h1>
+                <hr />
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>Paragraph</p>
+                    </div>
+                    <div className="col-md-9">
+                        <p>
+                            I will be the leader of a company that ends up being
+                            worth billions of dollars, because I got the
+                            answers. I understand culture. I am the nucleus. I
+                            think that’s a responsibility that I have, to push
+                            possibilities, to show people, this is the level
+                            that things could be at.
+                        </p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>Quote</p>
+                    </div>
+                    <div className="col-md-9">
+                        <blockquote>
+                            <p>
+                                I will be the leader of a company that ends up
+                                being worth billions of dollars, because I got
+                                the answers. I understand culture. I am the
+                                nucleus. I think that’s a responsibility that I
+                                have, to push possibilities, to show people,
+                                this is the level that things could be at.
+                            </p>
+                            <small>Kanye West, Musician</small>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div className="col-md-8">
+                <h1>Colors</h1>
+                <hr />
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>muted</p>
+                    </div>
+                    <div className="col-md-9">
+                        <p className="text-muted">
+                            {text("colors", "Hello, World!")}
+                        </p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>primary</p>
+                    </div>
+                    <div className="col-md-9">
+                        <p className="text-primary">
+                            {text("colors", "Hello, World!")}
+                        </p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>info</p>
+                    </div>
+                    <div className="col-md-9">
+                        <p className="text-info">
+                            {text("colors", "Hello, World!")}
+                        </p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>success</p>
+                    </div>
+                    <div className="col-md-9">
+                        <p className="text-success">
+                            {text("colors", "Hello, World!")}
+                        </p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>warning</p>
+                    </div>
+                    <div className="col-md-9">
+                        <p className="text-warning">
+                            {text("colors", "Hello, World!")}
+                        </p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-3">
+                        <p>danger</p>
+                    </div>
+                    <div className="col-md-9">
+                        <p className="text-danger">
+                            {text("colors", "Hello, World!")}
+                        </p>
                     </div>
                 </div>
             </div>

@@ -38,6 +38,7 @@ storiesOf("Forms", module)
             {options.map((option, index) => {
                 return (
                     <Radio
+                        key={index}
                         name={text("name" + index, option.name)}
                         label={text("label" + index, option.label)}
                         value={text("value" + index, option.value)}
