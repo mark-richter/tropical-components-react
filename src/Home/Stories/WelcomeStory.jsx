@@ -10,17 +10,21 @@ import {
     object
 } from "@storybook/addon-knobs";
 
-storiesOf("Home", module).add("welcome", () => (
-    <div>
-        <p style={{ textAlign: "center" }}>
-            <img
-                src="https://static.ssbintel.com/assets/portals/flinttropics/logo/flinttropics-logo.png"
-                width="150"
-            />
-        </p>
-        <h1 style={{ textAlign: "center" }}>SSB - Tropical Components</h1>
-        <br />
-        <br />
-        <h3 style={{ textAlign: "center" }}>Lets Get Tropical!</h3>
-    </div>
-));
+import WelcomeReadme from "../Docs/Welcome.md";
+
+storiesOf("Home", module)
+    .addDecorator(withReadme(WelcomeReadme))
+    .add("welcome", () => (
+        <div>
+            <p style={{ textAlign: "center" }}>
+                <img
+                    src="https://static.ssbintel.com/assets/portals/flinttropics/logo/flinttropics-logo.png"
+                    width="150"
+                />
+            </p>
+            <h1 style={{ textAlign: "center" }}>SSB - Tropical Components</h1>
+            <br />
+            <br />
+            <h3 style={{ textAlign: "center" }}>Lets Get Tropical!</h3>
+        </div>
+    ));
