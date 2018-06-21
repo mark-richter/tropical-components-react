@@ -6,8 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
         "storybook": "start-storybook -p 9001 -c .storybook",
-        "remove-winterfell": "rm -rf ./node_modules/winterfell/node_modules/react && rm -rf ./node_modules/winterfell/node_modules/react-dom",
-        "build-storybook": "remove-winterfell && build-storybook",
+        "build-storybook": "rm -rf ./node_modules/winterfell/node_modules/react && rm -rf ./node_modules/winterfell/node_modules/react-dom && build-storybook",
         "prepublish": "rm -rf ./dist && npm run build",
         "build": "webpack"
     },
