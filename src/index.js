@@ -9,12 +9,4 @@ import Select from "./Forms/Select.jsx";
 import TextInput from "./Forms/TextInput.jsx";
 import TextArea from "./Forms/TextArea.jsx";
 
-module.export = {
-  Card,
-  CardImage,
-  DynamicForm,
-  Radio,
-  Select,
-  TextInput,
-  TextArea
-};
+export { Card, CardImage, DynamicForm, Radio, Select, TextInput, TextArea };
