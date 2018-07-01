@@ -1,6 +1,6 @@
 {
   "name": "tropical-components-react",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "SSB Tropical Components in React",
   "main": "index.js",
   "scripts": {

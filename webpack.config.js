@@ -11,7 +11,7 @@ module.exports = {
   entry: path.join(__dirname, "./src/index.js"),
   output: {
     path: path.join(__dirname, "./dist"),
-    filename: "tropical-components-react.js",
+    filename: "index.js",
     library: libraryName,
     libraryTarget: "commonjs-module"
     //publicPath: "/dist/"
