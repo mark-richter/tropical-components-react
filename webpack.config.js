@@ -11,7 +11,7 @@ module.exports = {
     path: path.join(__dirname, "./dist"),
     filename: "tropical-components-react.js",
     library: libraryName,
-    libraryTarget: "commonjs-modules",
+    libraryTarget: "commonjs-module",
     publicPath: "/dist/"
     //umdNamedDefine: true
   },
