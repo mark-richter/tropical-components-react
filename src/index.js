@@ -1,10 +1,21 @@
 // Cards
-export Card from "./Card/Card.jsx";
-export CardImage from "./Card/CardImage.jsx";
+import Card from "./Card/Card.jsx";
+import CardImage from "./Card/CardImage.jsx";
 
 // Forms
-export DynamicForm from "./Forms/DynamicForm.jsx";
-export Radio from "./Forms/Radio.jsx";
-export Select from "./Forms/Select.jsx";
-export TextInput from "./Forms/TextInput.jsx";
-export TextArea from "./Forms/TextArea.jsx";
+import DynamicForm from "./Forms/DynamicForm.jsx";
+import Radio from "./Forms/Radio.jsx";
+import Select from "./Forms/Select.jsx";
+import TextInput from "./Forms/TextInput.jsx";
+import TextArea from "./Forms/TextArea.jsx";
+
+
+module.exports = {
+    Card,
+    CardImage,
+    DynamicForm,
+    Radio,
+    Select,
+    TextInput,
+    TextArea
+}
