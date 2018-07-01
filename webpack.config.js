@@ -5,17 +5,15 @@ const path = require("path");
 
 const libraryName = pkg.name;
 
-console.log(pkg.name);
-
 module.exports = {
   entry: path.join(__dirname, "./src/index.js"),
   output: {
     path: path.join(__dirname, "./dist"),
-    filename: "index.js",
+    filename: "tropical-components-react.js",
     library: libraryName,
-    libraryTarget: "commonjs-module"
-    //publicPath: "/dist/"
-    //umdNamedDefine: true
+    libraryTarget: "umd",
+    publicPath: "/dist/",
+    umdNamedDefine: true
   },
   node: {
     net: "empty",
