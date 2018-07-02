@@ -1,8 +1,8 @@
 {
   "name": "tropical-components-react",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "SSB Tropical Components in React",
-  "main": "index.js",
+  "main": "./dist/tropical-components-react.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "storybook": "start-storybook -p 9001 -c .storybook",
