@@ -1,6 +1,6 @@
 {
   "name": "tropical-components-react",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "SSB Tropical Components in React",
   "main": "./dist/tropical-components-react.js",
   "scripts": {
@@ -42,5 +42,7 @@
     "webpack-cli": "^3.0.2",
     "winterfell": "^1.1.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-select": "^2.0.0"
+  }
 }
