@@ -11,6 +11,6 @@ deploy:
   skip_cleanup: true
   provider: npm
   email: "services@ssbinfo.com"
-  api_key: "856af819-1334-4c1b-a217-7f371adf8d2f"
+  api_key: "300b0d22-899a-4ad5-bab8-eca5e96569fc"
   on:
     branch: master
