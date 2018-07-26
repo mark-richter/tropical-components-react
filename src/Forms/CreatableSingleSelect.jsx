@@ -30,14 +30,22 @@ class CreatableSingleSelect extends Component {
 
     handleChange(e) {
         if (e) {
-            console.log(e);
+            //console.log(e);
             this.setState(
                 {
                     value: e.value
                 },
                 this.props.onChange.bind(null, e.value)
             );
+        } else {
+            this.setState(
+                {
+                    value: undefined
+                },
+                this.props.onChange.bind(null, undefined)
+            );
         }
+        //console.log("Changed");
     }
 
     handleInputChange = (inputValue, actionMeta) => {
