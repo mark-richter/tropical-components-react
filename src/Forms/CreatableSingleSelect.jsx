@@ -3,65 +3,67 @@ import PropTypes from "prop-types";
 import CreatableSelect from "react-select/lib/Creatable";
 
 class CreatableSingleSelect extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: this.props.value
-    };
-  }
-
-  static propTypes = {
-    options: PropTypes.array.isRequired,
-    onChange: PropTypes.func
-  };
-
-  static defaultProps = {
-    onChange: () => {}
-  };
-
-  componentWillMount() {
-    this.props.options.forEach(option => {
-      if (option.text) {
-        option.label = option.text;
-        delete option.text;
-      }
-    });
-  }
-
-  handleChange(e) {
-    if (e) {
-      console.log(e);
-      this.setState(
-        {
-          value: e.value
-        },
-        this.props.onChange.bind(null, e.value)
-      );
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: this.props.value
+        };
     }
-  }
 
-  handleInputChange = (inputValue, actionMeta) => {
-    console.group("Input Changed");
-    console.log(inputValue);
-    console.log(`action: ${actionMeta.action}`);
-    console.groupEnd();
-  };
+    static propTypes = {
+        options: PropTypes.array.isRequired,
+        onChange: PropTypes.func
+    };
 
-  render() {
-    return (
-      <CreatableSelect
-        isClearable
-        onChange={this.handleChange.bind(this)}
-        //onInputChange={this.handleInputChange}
-        defaultValue={
-          this.props.options[
-            this.props.options.findIndex(i => i.value === this.state.value)
-          ]
+    static defaultProps = {
+        onChange: () => {}
+    };
+
+    componentWillMount() {
+        this.props.options.forEach(option => {
+            if (option.text) {
+                option.label = option.text;
+                delete option.text;
+            }
+        });
+    }
+
+    handleChange(e) {
+        if (e) {
+            console.log(e);
+            this.setState(
+                {
+                    value: e.value
+                },
+                this.props.onChange.bind(null, e.value)
+            );
         }
-        options={this.props.options}
-      />
-    );
-  }
+    }
+
+    handleInputChange = (inputValue, actionMeta) => {
+        console.group("Input Changed");
+        console.log(inputValue);
+        console.log(`action: ${actionMeta.action}`);
+        console.groupEnd();
+    };
+
+    render() {
+        return (
+            <CreatableSelect
+                isClearable
+                onChange={this.handleChange.bind(this)}
+                //onInputChange={this.handleInputChange}
+                defaultValue={
+                    this.props.options[
+                        this.props.options.findIndex(
+                            i => i.value === this.state.value
+                        )
+                    ]
+                }
+                options={this.props.options}
+            />
+        );
+    }
 }
 
 export default CreatableSingleSelect;
