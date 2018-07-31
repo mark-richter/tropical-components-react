@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 var Winterfell = require("winterfell");
 import CreatableSingleSelect from "./CreatableSingleSelect.jsx";
+import SingleSelect from "./SingleSelect.jsx";
 
 //Winterfell.addInputType("creatableSingleSelect", CreatableSingleSelect);
 
@@ -68,5 +69,6 @@ class DynamicForm extends Component {
 }
 
 DynamicForm.addInputType("creatableSingleSelect", CreatableSingleSelect);
+DynamicForm.addInputType("singleSelect", SingleSelect);
 
 export default DynamicForm;
