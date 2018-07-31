@@ -43,6 +43,7 @@
         "winterfell": "^1.1.4"
     },
     "dependencies": {
+        "react-ink": "^6.4.0",
         "react-select": "^2.0.0"
     }
 }

@@ -1,5 +1,25 @@
 # Tropical Components React
 
+<p align="center">
+<a href="" alt="Backers on Open Collective">
+        <img src="https://nodei.co/npm/tropical-components-react.png" /></a>
+</p>
+
+<span align="center">
+    <h4>Develop:
+    &nbsp;
+    <a href="" alt="Backers on Open Collective">
+        <img src="https://img.shields.io/travis/ssbcode/tropical-components-react/develop.svg?style=for-the-badge" /></a>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+    Master:
+    &nbsp;
+    <a href="#sponsors" alt="Sponsors on Open Collective">
+        <img src="https://img.shields.io/travis/ssbcode/tropical-components-react/master.svg?style=for-the-badge" /></a>
+        </h4>
+</span>
+
 ### Lets get tropical!
 
 This repository provides a collection of SSB Components implemented using React.
@@ -60,7 +80,7 @@ After successfully installing the `tropical-components` npm package, in your glo
 After successfully installing the `tropical-components-react` npm package, in one of your component files, add:
 
 ```js
-import { ComponentName } from "tropical-components-react/dist/tropical-components-react";
+import { ComponentName } from "tropical-components-react";
 ```
 
 ## Live Components
@@ -71,6 +91,9 @@ import { ComponentName } from "tropical-components-react/dist/tropical-component
     -   Select
     -   TextInput
     -   TextArea
+    -   CreatableSingleSelect
 -   Cards
     -   Card
     -   CardImage
+-   Button
+    -   Button
