@@ -163,6 +163,31 @@ const schema = {
                             }
                         ]
                     }
+                },
+                {
+                    questionId: "userType3",
+                    question: "What type of user are you 3?",
+                    input: {
+                        type: "singleSelect",
+                        //default: "yes",
+                        options: [
+                            //   {
+                            //     text: "",
+                            //     value: "",
+                            //     conditionalQuestions: []
+                            //   },
+                            {
+                                text: "Client",
+                                value: "client",
+                                conditionalQuestions: []
+                            },
+                            {
+                                text: "Tenant",
+                                value: "tenant",
+                                conditionalQuestions: []
+                            }
+                        ]
+                    }
                 }
             ]
         }
