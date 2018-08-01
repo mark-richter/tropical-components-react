@@ -28,6 +28,9 @@ import StylesStory from "../src/Typography/Stories/StylesStory.jsx";
 // Navigation
 import ButtonStory from "../src/Button/Stories/ButtonStory.jsx";
 
+// Loading
+import LoadingStory from "../src/Loading/Stories/LoadingStory.jsx";
+
 // Forms
 import TextInputStory from "../src/Forms/Stories/TextInputStory.jsx";
 import TextAreaStory from "../src/Forms/Stories/TextAreaStory.jsx";
@@ -35,6 +38,7 @@ import SelectStory from "../src/Forms/Stories/SelectStory.jsx";
 import RadioStory from "../src/Forms/Stories/RadioStory.jsx";
 import CreatableSingleSelectStory from "../src/Forms/Stories/CreatableSingleSelectStory.jsx";
 import SingleSelectStory from "../src/Forms/Stories/SingleSelectStory.jsx";
+import MultiSelectStory from "../src/Forms/Stories/MultiSelectStory.jsx";
 import DynamicFormStory from "../src/Forms/Stories/DynamicFormStory.jsx";
 
 // Cards
