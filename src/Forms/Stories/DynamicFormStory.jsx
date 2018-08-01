@@ -17,7 +17,8 @@ import DynamicForm from "../DynamicForm.jsx";
 const data = {
     email: "test@gmail.com",
     password: "1234",
-    existingUser: "yes"
+    existingUser: "yes",
+    userType4: ["client"]
 };
 
 const schema = {
@@ -169,6 +170,31 @@ const schema = {
                     question: "What type of user are you 3?",
                     input: {
                         type: "singleSelect",
+                        //default: "yes",
+                        options: [
+                            //   {
+                            //     text: "",
+                            //     value: "",
+                            //     conditionalQuestions: []
+                            //   },
+                            {
+                                text: "Client",
+                                value: "client",
+                                conditionalQuestions: []
+                            },
+                            {
+                                text: "Tenant",
+                                value: "tenant",
+                                conditionalQuestions: []
+                            }
+                        ]
+                    }
+                },
+                {
+                    questionId: "userType4",
+                    question: "What type of user are you 4?",
+                    input: {
+                        type: "multiSelect",
                         //default: "yes",
                         options: [
                             //   {

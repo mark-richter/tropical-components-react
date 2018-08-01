@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 var Winterfell = require("winterfell");
 import CreatableSingleSelect from "./CreatableSingleSelect.jsx";
 import SingleSelect from "./SingleSelect.jsx";
+import MultiSelect from "./MultiSelect.jsx";
 
 //Winterfell.addInputType("creatableSingleSelect", CreatableSingleSelect);
 
@@ -70,5 +71,6 @@ class DynamicForm extends Component {
 
 DynamicForm.addInputType("creatableSingleSelect", CreatableSingleSelect);
 DynamicForm.addInputType("singleSelect", SingleSelect);
+DynamicForm.addInputType("multiSelect", MultiSelect);
 
 export default DynamicForm;
